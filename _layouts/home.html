@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<section class="container hero">
+  {% if site.data.profile.avatar %}
+  <img class="avatar" src="{{ site.data.profile.avatar | relative_url }}" alt="Portrait of {{ site.data.profile.name }}">
+  {% endif %}
+  <h1 class="hero-name">{{ site.data.profile.name }}</h1>
+  <p class="hero-tagline">{{ site.data.profile.tagline }}</p>
+  <p class="hero-role">{{ site.data.profile.role }}</p>
+</section>
+
+<section class="container section">
+  <h2>About</h2>
+  <p>{{ site.data.profile.bio }}</p>
+  <p><a class="text-link" href="{{ '/about/' | relative_url }}">More about me →</a></p>
+</section>
+
+<section class="container section">
+  <h2>Skills</h2>
+  <ul class="tag-list">
+    {% for skill in site.data.profile.skills %}
+    <li class="tag">{{ skill }}</li>
+    {% endfor %}
+  </ul>
+</section>
