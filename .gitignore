@@ -1,5 +1,12 @@
-_site
-.sass-cache
-.jekyll-cache
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
-vendor
+.bundle/
+vendor/
+
+# Local-only reference files, not published
+_projects/TEMPLATE.md
+_achievements/TEMPLATE.md
+_projects/placeholder-*
+_achievements/placeholder-*
