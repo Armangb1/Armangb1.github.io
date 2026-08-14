@@ -1,0 +1,35 @@
+name: Arman Gholibeikian
+tagline: Control Engineering · AI · System Design
+role: MSc Mechatronics Engineering student at K. N. Toosi University of Technology
+avatar: /assets/img/avatar.jpg
+
+bio: |
+    I'm Arman, a mechatronics engineering master's student (mechanical engineering background) working across control systems, data-driven modeling, and reinforcement learning. The throughline across my projects — from data-driven dynamics of a tendon-driven continuum robot to using RL to detect and mitigate cyber-physical attacks on autonomous systems — is a single goal: building autonomous systems that are safe, reliable, and able to work alongside people. I also TA a machine learning course, designing hands-on exercises for students. I'm currently looking for PhD positions and job opportunities in secure, trustworthy autonomy.
+
+education:
+  - degree: M.Sc. in Mechatronics Engineering
+    institution: K. N. Toosi University of Technology
+    years: 2024-now
+    gpa: 18.15/20 (4/4)
+    supervisor: Dr. Mahdi Aliyari-Shoorehdeli
+    thesis_title: Cyberattack Detection Using Adversarial Reinforcement Learning in Modern Power Systems
+  - degree: B.Sc. in Mechanical Engineering
+    institution: K. N. Toosi University of Technology
+    years: 2020-2024
+    gpa: 17.45/20 (3.66/4)
+    supervisor: Prof. S Ali A Moosavian
+    project_title: Data-Driven Dynamic Modeling of Continuum Robot
+skills:
+  - Control System
+  - System Design
+  - Robotics
+  - Cyberphysical Systems
+  - AI & ML Workflows
+
+contact:
+  emails:
+    - arman.gholibeikian@email.kntu.ac.ir
+    - arman.ghbn@gmail.com
+  github: https://github.com/Armangb1
+  linkedin: https://ir.linkedin.com/in/armangholibeikian
+  scholar: https://scholar.google.com/citations?user=QbQOwnQAAAAJ&hl=en&oi=ao  
