@@ -26,6 +26,35 @@ skills:
   - Cyberphysical Systems
   - AI & ML Workflows
 
+experience:
+  - role: Undergraduate Research Assistant
+    lab: Advanced Robotic and Automated Systems (ARAS) Lab
+    institution: K. N. Toosi University of Technology
+    dates: Fall 2023 – present
+    description: |
+      - Data-driven modeling and control of continuum robots using screw theory
+      - Kinematic control of mecanum mobile robots via time-varying MPC
+      - Redundancy resolution for cable-driven parallel manipulators
+    publications:
+      - title: "Kinematic control of a mecanum mobile robot using time-varying model predictive control"
+        venue: "12th RSI International Conference on Robotics and Mechatronics (ICRoM)"
+        year: 2024
+      - title: "Kinematics Control of Continuum Robots Based on Screw Theory"
+        venue: "International Journal of Robotics, Theory and Applications"
+        year: 2025
+      - title: "A Novel Bio-Intelligent Real-Time Redundancy Resolution Method for Cable-Driven Parallel Manipulators"
+        venue: "12th RSI International Conference on Robotics and Mechatronics (ICRoM)"
+        year: 2024
+    tags: [Continuum Robotics, Mobile Robots, MPC, Screw Theory, Cable-Driven Robots]
+  - role: Graduate Research Assistant
+    lab: Advanced Process Automation & Control (APAC) Lab
+    institution: K. N. Toosi University of Technology
+    dates: Fall 2024 – present
+    description: |
+      - Cyberattack detection using adversarial reinforcement learning in power systems
+      - Secure and trustworthy autonomy for cyber-physical systems
+    tags: [Reinforcement Learning, Cybersecurity, Power Systems, Cyber-Physical Systems]
+
 contact:
   emails:
     - arman.gholibeikian@email.kntu.ac.ir

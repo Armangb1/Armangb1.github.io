@@ -257,6 +257,59 @@ a:hover {
   color: var(--accent-dark);
 }
 
+.experience-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-role {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.experience-lab {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.experience-meta {
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.experience-desc {
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.experience-publications {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.pub-list {
+  list-style: none;
+  margin-top: 0.5rem;
+  padding-left: 0;
+}
+
+.pub-list li {
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+}
+
+.pub-list em {
+  color: var(--text);
+}
+
 /* Contact page */
 .lead {
   color: var(--muted);
