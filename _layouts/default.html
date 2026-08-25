@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="theme-color" content="#faf8f5">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="website">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
 </head>
@@ -14,11 +23,11 @@
     <div class="container header-inner">
       <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
       <nav class="site-nav" aria-label="Main">
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/projects/' | relative_url }}">Projects</a>
-        <a href="{{ '/achievements/' | relative_url }}">Achievements</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/projects/' | relative_url }}" {% if page.url == '/projects/' or page.url contains '/projects/' %}aria-current="page"{% endif %}>Projects</a>
+        <a href="{{ '/achievements/' | relative_url }}" {% if page.url == '/achievements/' or page.url contains '/achievements/' %}aria-current="page"{% endif %}>Achievements</a>
+        <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+        <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
       </nav>
     </div>
   </header>
@@ -27,7 +36,34 @@
   </main>
   <footer class="site-footer">
     <div class="container">
-      <p>© {{ site.time | date: "%Y" }} {{ site.data.profile.name }}</p>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-name">{{ site.data.profile.name }}</p>
+          <p class="footer-tagline">{{ site.data.profile.tagline }}</p>
+          <div class="footer-social">
+            <a href="mailto:{{ site.data.profile.contact.emails.first }}" aria-label="Email {{ site.data.profile.name }}">{% include icon-email.html %}</a>
+            <a href="{{ site.data.profile.contact.github }}" target="_blank" rel="noopener" aria-label="GitHub profile">{% include icon-github.html %}</a>
+            <a href="{{ site.data.profile.contact.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn profile">{% include icon-linkedin.html %}</a>
+            {% if site.data.profile.contact.scholar %}
+            <a href="{{ site.data.profile.contact.scholar }}" target="_blank" rel="noopener" aria-label="Google Scholar profile">{% include icon-scholar.html %}</a>
+            {% endif %}
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <p class="footer-col-title">Site</p>
+          <ul>
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+            <li><a href="{{ '/achievements/' | relative_url }}">Achievements</a></li>
+            <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-legal">
+        <span>© {{ site.time | date: "%Y" }} {{ site.data.profile.name }}</span>
+        <span>Built with Jekyll</span>
+      </div>
     </div>
   </footer>
 </body>
