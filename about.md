@@ -2,71 +2,74 @@
 layout: page
 title: About
 ---
-<p>{{ site.data.profile.bio }}</p>
+<div class="about-grid">
+  <div class="about-main">
+    <p>{{ site.data.profile.bio }}</p>
 
-<h2>Education</h2>
-<ul class="plain-list">
-  {% for edu in site.data.profile.education %}
-  <li class="education-item">
-    <div class="education-degree">{{ edu.degree }}</div>
-    <div class="education-meta">
-      {{ edu.institution }} · <span class="muted">{{ edu.years }}</span>
+    <div class="btn-row">
+      <a class="btn btn-secondary" href="{{ '/contact/' | relative_url }}">Get in touch</a>
+      {% if site.data.profile.contact.scholar %}
+      <a class="btn btn-secondary" href="{{ site.data.profile.contact.scholar }}" target="_blank" rel="noopener">Google Scholar ↗</a>
+      {% endif %}
     </div>
-    {% if edu.gpa %}
-    <div class="education-detail">
-      <span class="detail-label">GPA</span>{{ edu.gpa }}
-    </div>
-    {% endif %}
-    {% if edu.supervisor %}
-    <div class="education-detail">
-      <span class="detail-label">Supervisor</span>{{ edu.supervisor }}
-    </div>
-    {% endif %}
-    {% if edu.thesis_title %}
-    <div class="education-detail">
-      <span class="detail-label">Thesis</span>{{ edu.thesis_title }}
-    </div>
-    {% endif %}
-    {% if edu.project_title %}
-    <div class="education-detail">
-      <span class="detail-label">Project</span>{{ edu.project_title }}
-    </div>
-    {% endif %}
-  </li>
-  {% endfor %}
-</ul>
+  </div>
 
-<p><a class="text-link" href="{{ '/contact/' | relative_url }}">Get in touch →</a></p>
-
-<h2>Research Experience</h2>
-<ul class="plain-list">
-  {% for exp in site.data.profile.experience %}
-  <li class="experience-item">
-    <div class="experience-header">
-      <div class="experience-role">{{ exp.role }}</div>
-      <div class="experience-lab">{{ exp.lab }}</div>
-    </div>
-    <div class="experience-meta">
-      {{ exp.institution }} · <span class="muted">{{ exp.dates }}</span>
-    </div>
-    <div class="experience-desc">{{ exp.description }}</div>
-    {% if exp.publications %}
-    <div class="experience-publications">
-      <strong>Publications:</strong>
-      <ul class="pub-list">
-        {% for pub in exp.publications %}
-        <li><em>{{ pub.title }}</em>, {{ pub.venue }}, {{ pub.year }}</li>
-        {% endfor %}
+  <aside class="about-rail">
+    <p class="eyebrow"><span class="eyebrow-index">§</span>Education</p>
+    {% for edu in site.data.profile.education %}
+    <div class="edu-card">
+      <h2 class="edu-degree">{{ edu.degree }}</h2>
+      <p class="edu-school">{{ edu.institution }}</p>
+      <p class="edu-years">{{ edu.years }}</p>
+      <ul class="edu-facts">
+        {% if edu.gpa %}<li><span class="fact-label">GPA</span>{{ edu.gpa }}</li>{% endif %}
+        {% if edu.supervisor %}<li><span class="fact-label">Supervisor</span>{{ edu.supervisor }}</li>{% endif %}
+        {% if edu.thesis_title %}<li><span class="fact-label">Thesis</span>{{ edu.thesis_title }}</li>{% endif %}
+        {% if edu.project_title %}<li><span class="fact-label">Project</span>{{ edu.project_title }}</li>{% endif %}
       </ul>
     </div>
-    {% endif %}
-    {% if exp.tags %}
-    <ul class="tag-list">
-      {% for tag in exp.tags %}
-      <li class="tag">{{ tag }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-  </li>
-  {% endfor %}
-</ul>
+    {% endfor %}
+  </aside>
+</div>
+
+<section class="section">
+  <p class="eyebrow"><span class="eyebrow-index">¶</span>Experience</p>
+  <h2>Research Experience</h2>
+  <ul class="plain-list">
+    {% for exp in site.data.profile.experience %}
+    <li class="experience-item">
+      <div class="experience-role">{{ exp.role }}</div>
+      <div class="experience-lab">{{ exp.lab }} · {{ exp.institution }}</div>
+      <div class="experience-meta">{{ exp.dates }}</div>
+      <ul class="exp-points">
+        {% assign raw_lines = exp.description | newline_to_br | split: '<br />' %}
+        {% for line in raw_lines %}
+          {% assign l = line | strip %}
+          {% if l != '' %}
+            {% assign first_two = l | slice: 0, 2 %}
+            {% if first_two == '- ' %}{% assign l = l | remove_first: '- ' %}{% endif %}
+            <li>{{ l }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      {% if exp.publications %}
+      <div class="experience-publications">
+        <p class="pub-block-title">Publications</p>
+        <ul class="pub-list">
+          {% for pub in exp.publications %}
+          <li><em>{{ pub.title }}</em>, {{ pub.venue }}, {{ pub.year }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% if exp.tags %}
+      <ul class="tag-list experience-tags">
+        {% for tag in exp.tags %}
+        <li class="tag">{{ tag }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
