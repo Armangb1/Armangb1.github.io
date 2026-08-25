@@ -4,6 +4,7 @@ description: "From-scratch automatic differentiation and neural network library 
 date: 2024-12-01
 tech: ["Python", "NumPy", "Automatic Differentiation", "Neural Networks", "Control Systems", "Optimization", "Machine Learning"]
 link: "https://github.com/Armangb1/pygorch"
+image: "assets/projects/pygorch/hero3.svg"
 ---
 
 Gorch is a from-scratch automatic differentiation and neural-network library written purely in NumPy — no PyTorch, no TensorFlow. Built for a Neural Control course at K. N. Toosi University of Technology, it demonstrates exactly how backpropagation, optimizers, and network layers work under the hood.

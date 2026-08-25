@@ -22,6 +22,9 @@ layout: default
     </ul>
     {% endif %}
   </header>
+  {% if page.image %}
+  <img class="entry-image" src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+  {% endif %}
   <div class="entry-body">
     {{ content }}
     {% if page.link %}

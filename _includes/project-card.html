@@ -4,6 +4,11 @@
 {% endcomment %}
 {% assign card = include.project %}
 <li class="card">
+  {% if card.image %}
+  <div class="card-image">
+    <img src="{{ card.image | relative_url }}" alt="{{ card.title }}" loading="lazy">
+  </div>
+  {% endif %}
   <div class="card-meta">
     {% if include.index %}<span class="card-index">{{ include.index | prepend: '0' | slice: -2, 2 }}</span>{% endif %}
     {% if card.date %}<span>{{ card.date | date: "%b %Y" }}</span>{% endif %}

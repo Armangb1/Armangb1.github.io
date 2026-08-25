@@ -4,6 +4,7 @@ description: "End-to-end smart-home IoT platform: Arduino/ESP8266 publishes sens
 date: 2022-12-01
 tech: ["Arduino", "C++", "Python", "Django", "Django REST Framework", "Flutter", "Docker", "MQTT", "InfluxDB", "Node-RED", "IoT", "Smart Home"]
 link: "https://github.com/Armangb1/SmartHome_IoT"
+image: "assets/projects/smarthome-iot/sweetsignal.png"
 ---
 
 SweetSignal SmartHome IoT is an end-to-end smart-home platform built for the Introduction to Robotics & Lab course (Fall 2022, KNTU). An Arduino-based controller (ESP8266/ESP-01 + L298N) publishes sensor data over MQTT to a Mosquitto broker, Node-RED bridges the data into InfluxDB for time-series storage, and a Django REST API serves the history and relays actuator commands back to the hardware. A Flutter mobile app provides JWT-authenticated login and device control.

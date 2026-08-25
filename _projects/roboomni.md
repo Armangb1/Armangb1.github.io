@@ -4,6 +4,7 @@ description: "ROS 2 Jazzy workspace for a mecanum-wheeled dataset-collection rob
 date: 2024-11-01
 tech: ["ROS 2", "Python", "C++", "Mecanum Drive", "Micro-ROS", "ros2_control", "Robotics", "SLAM", "LiDAR", "RGB-D"]
 link: "https://github.com/Armangb1/roboomni"
+image: "assets/projects/roboomni/hero.jpg"
 ---
 
 RoboOmni is a ROS 2 (Jazzy) mobile robotics platform built on a mecanum-wheeled chassis for collecting synchronized multimodal datasets (RGB-D, LiDAR, IMU, wheel odometry). The system is engineered end-to-end: a custom `ros2_control` hardware interface talks to an ESP32 via **micro-ROS**, custom **mecanum Jacobian controller** plugins handle the inverse kinematics, and a single launch file brings up sensors, control, and visualization.
