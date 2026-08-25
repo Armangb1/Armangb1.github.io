@@ -1,0 +1,21 @@
+{% comment %}
+  Renders one project card.
+  Params: project (collection doc), index (optional, 1-based display index)
+{% endcomment %}
+{% assign card = include.project %}
+<li class="card">
+  <div class="card-meta">
+    {% if include.index %}<span class="card-index">{{ include.index | prepend: '0' | slice: -2, 2 }}</span>{% endif %}
+    {% if card.date %}<span>{{ card.date | date: "%b %Y" }}</span>{% endif %}
+  </div>
+  <h3 class="card-title">
+    <a href="{{ card.url | relative_url }}">{{ card.title }}</a>
+  </h3>
+  <span class="card-arrow" aria-hidden="true">↗</span>
+  <p class="card-desc">{{ card.description | default: card.excerpt }}</p>
+  {% if card.tech %}
+  <ul class="tag-list card-foot" aria-label="Technologies">
+    {% for tech in card.tech %}<li class="tag">{{ tech }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+</li>
