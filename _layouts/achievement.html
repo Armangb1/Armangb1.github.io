@@ -3,10 +3,39 @@ layout: default
 ---
 <article class="container page">
   <header class="entry-header">
+    <p class="back-row"><a class="back-link" href="{{ '/achievements/' | relative_url }}">All achievements</a></p>
+    <p class="page-count">Achievement{% if page.date %} · {{ page.date | date: "%B %Y" }}{% endif %}</p>
     <h1>{{ page.title }}</h1>
-    {% if page.date %}<p class="entry-date">{{ page.date | date: "%B %Y" }}</p>{% endif %}
+    {% if page.category %}<span class="chip">{{ page.category }}</span>{% endif %}
   </header>
-  <div class="page-body">
+  <div class="entry-body">
     {{ content }}
   </div>
+
+  {% assign sorted = site.achievements | sort: 'date' | reverse %}
+  {% assign newer = nil %}
+  {% assign older = nil %}
+  {% for a in sorted %}
+    {% if a.url == page.url %}
+      {% unless forloop.first %}{% assign ni = forloop.index0 | minus: 1 %}{% assign newer = sorted[ni] %}{% endunless %}
+      {% unless forloop.last %}{% assign oi = forloop.index0 | plus: 1 %}{% assign older = sorted[oi] %}{% endunless %}
+    {% endif %}
+  {% endfor %}
+
+  {% if newer or older %}
+  <nav class="pager" aria-label="Achievement navigation">
+    {% if newer %}
+    <a class="pager-link" href="{{ newer.url | relative_url }}">
+      <span class="pager-label">← Newer</span>
+      <span class="pager-title">{{ newer.title }}</span>
+    </a>
+    {% else %}<span></span>{% endif %}
+    {% if older %}
+    <a class="pager-link pager-next" href="{{ older.url | relative_url }}">
+      <span class="pager-label">Older →</span>
+      <span class="pager-title">{{ older.title }}</span>
+    </a>
+    {% else %}<span></span>{% endif %}
+  </nav>
+  {% endif %}
 </article>
