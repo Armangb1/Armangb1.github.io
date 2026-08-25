@@ -22,7 +22,12 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <nav class="site-nav" aria-label="Main">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
         <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
         <a href="{{ '/projects/' | relative_url }}" {% if page.url == '/projects/' or page.url contains '/projects/' %}aria-current="page"{% endif %}>Projects</a>
         <a href="{{ '/achievements/' | relative_url }}" {% if page.url == '/achievements/' or page.url contains '/achievements/' %}aria-current="page"{% endif %}>Achievements</a>
@@ -66,5 +71,12 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      document.getElementById('site-nav').classList.toggle('is-open');
+    });
+  </script>
 </body>
 </html>
