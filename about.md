@@ -73,3 +73,21 @@ title: About
     {% endfor %}
   </ul>
 </section>
+
+<section class="section">
+  <p class="eyebrow"><span class="eyebrow-index">†</span>Teaching</p>
+  <h2>Teaching Experience</h2>
+  {% if site.data.profile.teaching_experience %}
+  <ul class="card-grid">
+    {% for ta in site.data.profile.teaching_experience %}
+    <li class="card ta-card">
+      <div class="card-meta">
+        <span>{{ ta.term }}</span>
+      </div>
+      <h3 class="card-title">{{ ta.course }}</h3>
+      <p class="ta-professor">{{ ta.professor }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</section>

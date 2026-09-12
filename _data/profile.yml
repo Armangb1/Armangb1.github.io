@@ -55,6 +55,29 @@ experience:
       - Secure and trustworthy autonomy for cyber-physical systems
     tags: [Reinforcement Learning, Cybersecurity, Power Systems, Cyber-Physical Systems]
 
+teaching_experience:
+  - course: Deep Generative Models
+    professor: Dr. Behrooz Nasihatkon
+    term: Spring 2026
+  - course: Machine Learning
+    professor: Dr. Mahdi Aliyari-Shoorehdeli
+    term: Spring 2026
+  - course: Introduction to AI
+    professor: Dr. Mahdi Aliyari-Shoorehdeli
+    term: Spring 2026
+  - course: System Identification
+    professor: Dr. Mahdi Aliyari-Shoorehdeli
+    term: Fall 2025
+  - course: Linear Control Systems
+    professor: Dr. Bijan Moaveni
+    term: Fall 2024
+  - course: Dynamics
+    professor: Prof. S. Ali A. Moosavian
+    term: Fall 2024
+  - course: Dynamics & Vibration Lab
+    professor: Prof. S. Ali A. Moosavian
+    term: Fall 2024
+
 contact:
   emails:
     - arman.gholibeikian@email.kntu.ac.ir

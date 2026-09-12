@@ -1148,6 +1148,18 @@ img {
   margin-top: var(--space-3);
 }
 
+.ta-card:hover {
+  transform: none;
+  border-color: var(--border);
+  box-shadow: none;
+}
+
+.ta-professor {
+  color: var(--accent-strong);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
 /* ---------- Contact page ---------- */
 
 .contact-primary {
