@@ -1253,11 +1253,17 @@ img {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  grid-auto-rows: 1fr;
   gap: var(--space-4);
+}
+
+.channel-grid > li {
+  display: flex;
 }
 
 .channel-card {
   display: flex;
+  flex: 1;
   align-items: center;
   gap: var(--space-3);
   background: var(--card-bg);
@@ -1292,6 +1298,9 @@ img {
 }
 
 .channel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
   min-width: 0;
 }
 
@@ -1309,6 +1318,10 @@ img {
   font-size: 0.95rem;
   color: var(--ink);
   word-break: break-word;
+}
+
+.channel-card[href^="mailto:"] .channel-value {
+  white-space: nowrap;
 }
 
 .contact-note {
