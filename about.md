@@ -83,9 +83,17 @@ title: About
     <li class="card ta-card">
       <div class="card-meta">
         <span>{{ ta.term }}</span>
+        <span>Teaching Assistant</span>
       </div>
       <h3 class="card-title">{{ ta.course }}</h3>
       <p class="ta-professor">{{ ta.professor }}</p>
+      {% if ta.responsibilities %}
+      <ul class="exp-points">
+        {% for responsibility in ta.responsibilities %}
+        <li>{{ responsibility }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </li>
     {% endfor %}
   </ul>

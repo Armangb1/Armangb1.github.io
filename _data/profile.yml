@@ -56,27 +56,45 @@ experience:
     tags: [Reinforcement Learning, Cybersecurity, Power Systems, Cyber-Physical Systems]
 
 teaching_experience:
-  - course: Deep Generative Models
+  - course: Deep Generative AI
     professor: Dr. Behrooz Nasihatkon
     term: Spring 2026
+    responsibilities:
+      - "Designed homework assignments on introductory probability and energy-based models, emphasizing the application of theoretical concepts to generative modeling."
+      - "Conducted online interviews and oral assessments to evaluate students' understanding of their projects and homework assignments."
   - course: Machine Learning
     professor: Dr. Mahdi Aliyari-Shoorehdeli
     term: Spring 2026
-  - course: Introduction to AI
+    responsibilities:
+      - "Designed a reinforcement learning homework assignment involving practical implementation and analysis of reinforcement learning concepts."
+  - course: Introduction to Artificial Intelligence
     professor: Dr. Mahdi Aliyari-Shoorehdeli
     term: Spring 2026
+    responsibilities:
+      - "Designed a take-home assessment administered after the final examination to evaluate students' understanding of core AI concepts."
+      - "Conducted interviews to discuss and assess students' solutions to the take-home assignment."
   - course: System Identification
     professor: Dr. Mahdi Aliyari-Shoorehdeli
     term: Fall 2025
+    responsibilities:
+      - "Conducted workshops on nonlinear system identification, including methods for estimating the order of nonlinear dynamic systems."
+      - "Designed homework assignments on system identification concepts and their practical applications."
   - course: Linear Control Systems
     professor: Dr. Bijan Moaveni
     term: Fall 2024
+    responsibilities:
+      - "Designed computer-aided homework assignments using MATLAB and Simulink to provide hands-on practice in linear control systems analysis and design."
   - course: Dynamics
     professor: Prof. S. Ali A. Moosavian
     term: Fall 2024
-  - course: Dynamics & Vibration Lab
+    responsibilities:
+      - "Designed homework assignments on fundamental engineering dynamics concepts and their application to mechanical systems."
+  - course: Dynamics and Vibrations Laboratory
     professor: Prof. S. Ali A. Moosavian
     term: Fall 2024
+    responsibilities:
+      - "Instructed students on laboratory procedures, expected observations, and the physical concepts underlying the experiments."
+      - "Guided students through experiment setup and execution, and helped them interpret and understand the results."
 
 contact:
   emails:
