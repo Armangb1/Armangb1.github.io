@@ -14,11 +14,11 @@ title: About
     </div>
   </div>
 
-  <aside class="about-rail">
-    <p class="eyebrow"><span class="eyebrow-index">§</span>Education</p>
+  <aside class="about-rail" aria-labelledby="education-heading">
+    <h2 class="eyebrow" id="education-heading"><span class="eyebrow-index">§</span>Education</h2>
     {% for edu in site.data.profile.education %}
     <div class="edu-card">
-      <h2 class="edu-degree">{{ edu.degree }}</h2>
+      <h3 class="edu-degree">{{ edu.degree }}</h3>
       <p class="edu-school">{{ edu.institution }}</p>
       <p class="edu-years">{{ edu.years }}</p>
       <ul class="edu-facts">

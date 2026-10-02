@@ -12,7 +12,8 @@ title: Contact
     </p>
   </div>
   <div class="contact-primary-side">
-    <button class="copy-btn" type="button" data-copy="{{ site.data.profile.contact.emails.first }}" aria-live="polite">Copy address</button>
+    <button class="copy-btn" type="button" data-copy="{{ site.data.profile.contact.emails.first }}" aria-describedby="copy-feedback">Copy address</button>
+    <p class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
   </div>
 </div>
 
@@ -67,14 +68,24 @@ title: Contact
 
 <script>
   document.querySelectorAll('.copy-btn').forEach(function (btn) {
-    var original = btn.textContent;
+    var feedback = document.getElementById('copy-feedback');
+    var fallbackMessage = 'Copying is unavailable. Select and copy the email address above.';
+
     btn.addEventListener('click', function () {
       var text = btn.getAttribute('data-copy');
-      if (navigator.clipboard && navigator.clipboard.writeText) {
+      if (!navigator.clipboard || typeof navigator.clipboard.writeText !== 'function') {
+        feedback.textContent = fallbackMessage;
+        return;
+      }
+
+      try {
         navigator.clipboard.writeText(text).then(function () {
-          btn.textContent = 'Copied ✓';
-          setTimeout(function () { btn.textContent = original; }, 2000);
+          feedback.textContent = 'Email address copied.';
+        }).catch(function () {
+          feedback.textContent = 'Could not copy. Select and copy the email address above.';
         });
+      } catch (error) {
+        feedback.textContent = 'Could not copy. Select and copy the email address above.';
       }
     });
   });
