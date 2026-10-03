@@ -36,15 +36,36 @@ experience:
       - Kinematic control of mecanum mobile robots via time-varying MPC
       - Redundancy resolution for cable-driven parallel manipulators
     publications:
-      - title: "Kinematic control of a mecanum mobile robot using time-varying model predictive control"
+      - title: "Kinematic Control of a Mecanum Mobile Robot using Time-Varying Model Predictive Control"
+        authors:
+          - "Seyed Ali Shahzadeh Fazeli"
+          - "Sohrab Allahyari"
+          - "Arman Gholibeikian"
+          - "S. Ali A. Moosavian"
         venue: "12th RSI International Conference on Robotics and Mechatronics (ICRoM)"
         year: 2024
+        pages: "449–454"
+        doi: "10.1109/ICRoM64545.2024.10903625"
       - title: "Kinematics Control of Continuum Robots Based on Screw Theory"
+        authors:
+          - "Saeedeh Shekari"
+          - "Arman Gholibeikian"
+          - "S. Ali A. Moosavian"
         venue: "International Journal of Robotics, Theory and Applications"
         year: 2025
+        volume: 11
+        issue: 1
+        pages: "1–10"
+        publisher_url: "https://ijr.kntu.ac.ir/article_212357.html"
       - title: "A Novel Bio-Intelligent Real-Time Redundancy Resolution Method for Cable-Driven Parallel Manipulators"
+        authors:
+          - "S. Ali A. Moosavian"
+          - "SeyedSina Seyedi HasanAbadi"
+          - "Arman Gholibeikian"
         venue: "12th RSI International Conference on Robotics and Mechatronics (ICRoM)"
         year: 2024
+        pages: "193–200"
+        doi: "10.1109/ICRoM64545.2024.10903639"
     tags: [Continuum Robotics, Mobile Robots, MPC, Screw Theory, Cable-Driven Robots]
   - role: Graduate Research Assistant
     lab: Advanced Process Automation & Control (APAC) Lab

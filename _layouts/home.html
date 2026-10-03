@@ -64,7 +64,20 @@ layout: default
         <span class="pub-num">[{{ forloop.index }}]</span>
         <div>
           <p class="pub-title">{{ pub.title }}</p>
-          <p class="pub-venue">{{ pub.venue }} · {{ pub.year }}</p>
+          {% if pub.authors %}
+          <p class="pub-venue">{{ pub.authors | join: '; ' }}</p>
+          {% endif %}
+          <p class="pub-venue">
+            {{ pub.venue }} · {{ pub.year }}
+            {% if pub.volume %} · vol. {{ pub.volume }}{% endif %}
+            {% if pub.issue %}, no. {{ pub.issue }}{% endif %}
+            {% if pub.pages %} · pp. {{ pub.pages }}{% endif %}
+          </p>
+          {% if pub.doi %}
+          <p class="pub-venue"><a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">DOI: {{ pub.doi }}</a></p>
+          {% elsif pub.publisher_url %}
+          <p class="pub-venue"><a href="{{ pub.publisher_url }}" target="_blank" rel="noopener">Publisher page ↗</a></p>
+          {% endif %}
         </div>
       </div>
       {% endfor %}

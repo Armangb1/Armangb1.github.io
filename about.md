@@ -57,7 +57,18 @@ title: About
         <p class="pub-block-title">Publications</p>
         <ul class="pub-list">
           {% for pub in exp.publications %}
-          <li><em>{{ pub.title }}</em>, {{ pub.venue }}, {{ pub.year }}</li>
+          <li>
+            {% if pub.authors %}{{ pub.authors | join: '; ' }}. {% endif %}
+            <em>{{ pub.title }}</em>. {{ pub.venue }}
+            {% if pub.volume %}, vol. {{ pub.volume }}{% endif %}
+            {% if pub.issue %}, no. {{ pub.issue }}{% endif %}
+            {% if pub.pages %}, pp. {{ pub.pages }}{% endif %}, {{ pub.year }}.
+            {% if pub.doi %}
+            <a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">DOI: {{ pub.doi }}</a>
+            {% elsif pub.publisher_url %}
+            <a href="{{ pub.publisher_url }}" target="_blank" rel="noopener">Publisher page</a>
+            {% endif %}
+          </li>
           {% endfor %}
         </ul>
       </div>
